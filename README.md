@@ -1,14 +1,8 @@
 # ThiranexTask2
 import nmap
-
-
 scanner = nmap.PortScanner()
-
-
-target = '192.168.1.1'  # Replace with your target
-
+target = '192.168.1.1'
 scanner.scan(hosts=target, arguments='-sT')
-
 for host in scanner.all_hosts():
     print(f'Host: {host}')
     print(f'State: {scanner[host].state()}')
