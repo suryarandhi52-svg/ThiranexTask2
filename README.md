@@ -1,16 +1,14 @@
 # ThiranexTask2
 import nmap
 
-# Create an instance of PortScanner
+
 scanner = nmap.PortScanner()
 
-# Specify the target IP or hostname
+
 target = '192.168.1.1'  # Replace with your target
 
-# Run a basic TCP scan on common ports
 scanner.scan(hosts=target, arguments='-sT')
 
-# Print out the results
 for host in scanner.all_hosts():
     print(f'Host: {host}')
     print(f'State: {scanner[host].state()}')
